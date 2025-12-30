@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import logo from './logo.svg'
+import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="Test">
+        <div className="login-form">
+          <div>
+            <legend> Логин</legend>
+            <input type="text" name="login" />
+          </div>
+          <div>
+            <legend> Пароль</legend>
+            <input type="password" name="password" />
+          </div>
+          <button type="submit">Войти</button>
+        </div>
+        <div>
+          <button>Продолжить с VK ID</button>
+        </div>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
