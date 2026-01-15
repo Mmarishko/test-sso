@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import * as bcrypt from 'bcrypt';
 
 export enum UserRole {
   USER = 'USER',
@@ -20,6 +21,7 @@ interface User {
   username: string;
   email: string;
   password: string;
+  passwordHash: string;
   role: UserRole;
   permissions: Permission[];
   isActive: boolean;
@@ -35,7 +37,10 @@ export class UsersService {
       id: '1',
       username: 'marina',
       email: 'mayrishka.x86@gmail.com',
-      password: '123456',
+      password: 'secret123',
+      // hash пароля 'secret123'
+      passwordHash:
+        '$2b$10$GkZzQxK9eY7u6vJ4XqW3eOaF8rT5sU7vW9xY1zA2bC3dE4fG5hI6j',
       role: UserRole.ADMIN,
       permissions: [Permission.READ, Permission.WRITE, Permission.DELETE],
       isActive: true,
@@ -48,6 +53,8 @@ export class UsersService {
       username: 'guest',
       email: 'guest@guest.ru',
       password: 'guess',
+      passwordHash:
+        '$2b$10$GkZzQxK9eY7u6vJ4XqW3eOaF8rT5sU7vW9xY1zA2bC3dE4fG5hI6j',
       role: UserRole.USER,
       permissions: [Permission.READ, Permission.MANAGE_CONTENT],
       isActive: true,
@@ -59,5 +66,17 @@ export class UsersService {
 
   async findOne(username: string): Promise<User | undefined> {
     return this.users.find((user) => user.username === username);
+  }
+
+  async findOneById(id: string): Promise<User | undefined> {
+    return this.users.find((user) => user.id === id);
+  }
+
+  async validateUser(username: string, password: string) {
+    const user = this.users.find((u) => u.username === username);
+    if (user && (await bcrypt.compare(password, user.passwordHash))) {
+      return { id: user.id, username: user.username };
+    }
+    return null;
   }
 }
