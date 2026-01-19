@@ -5,7 +5,7 @@ import './App.css'
 function App() {
   return (
     <div className="App">
-      <header className="Test">
+      <section className="Test">
         <div className="login-form">
           <div>
             <legend> Логин</legend>
@@ -20,7 +20,8 @@ function App() {
         <div>
           <button>Продолжить с VK ID</button>
         </div>
-      </header>
+      </section>
+      <input type="range" />
     </div>
   )
 }
