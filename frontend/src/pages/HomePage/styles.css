@@ -1,0 +1,28 @@
+.header {
+  margin-bottom: var(--m24);
+}
+
+.events {
+  margin: 15px auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  gap: var(--m8);
+}
+
+.button {
+  width: 10rem;
+  margin: 0 1dvh;
+  padding: 5px 10px;
+  border: 1px solid #8dd193;
+  border-radius: 10px;
+  color: black;
+  background-color: #8dd193;
+}
+
+.button:hover,
+.button:active {
+  background-color: #67946a;
+  border-color: #67946a;
+}

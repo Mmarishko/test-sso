@@ -1,0 +1,106 @@
+/* через flex*/
+.centerScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: beige;
+}
+.firstCenterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  background-color: aqua;
+}
+.secondCenterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: aquamarine;
+  width: 300px;
+  height: 200px;
+}
+
+/* через grid*/
+.gridContainer {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-color: beige;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: aquamarine;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+/* абсолютное позиционирование*/
+.centeredDiv {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background: lightblue; */
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 300px;
+  height: 200px;
+  background: lightblue;
+}
+
+/* fix позиционирование */
+.fixedDiv {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background: lightblue;
+}
+
+/* table*/
+.table {
+  height: 100px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.left {
+  float: left;
+  background: lightblue;
+}
+.right {
+  float: right;
+  background-color: aquamarine;
+}
+.thirdContainer {
+  background-color: beige;
+}
+
+.image {
+  width: 200px;
+  margin: 5px 10px 5px 0;
+  text-align: center;
+  border: 1px solid black;
+}
+.image-left {
+  float: left;
+}
+.image-right {
+  float: right;
+}
