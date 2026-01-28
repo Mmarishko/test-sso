@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import './App.css'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import { MainPage } from './pages/MainPage'
+import { LightInputPage } from './pages/LightInputPage'
 
 // Ленивая загрузка компонентов
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'))
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     children: [
       { path: 'home', Component: HomePage },
       { path: 'main', Component: MainPage },
+      { path: 'lightpage', Component: LightInputPage },
       { path: 'auth', Component: AuthForm },
     ],
   },
@@ -28,6 +30,25 @@ function Main() {
   return (
     <main>
       <h1>Заголовок приложения</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/home">Главная страница</a>
+          </li>
+          <li>
+            <a href="/main">Первая страница</a>
+          </li>
+          <li>
+            <a href="/lightpage">Подсветка</a>
+          </li>
+          <li>
+            <a href="/animations">Анимации</a>
+          </li>
+          <li>
+            <a href="/auth">Вход</a>
+          </li>
+        </ul>
+      </nav>
       <Outlet />
     </main>
   )

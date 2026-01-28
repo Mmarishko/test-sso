@@ -1,0 +1,15 @@
+.range-container {
+  margin-top: 5dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  min-height: 30vh;
+}
+.round {
+  height: 15vh;
+  width: 15vh;
+  border-radius: 50%;
+  /* background-color: aquamarine; */
+}
