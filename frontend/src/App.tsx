@@ -3,6 +3,7 @@ import './App.css'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import { MainPage } from './pages/MainPage'
 import { LightInputPage } from './pages/LightInputPage'
+import { AnimationsPage } from './pages/AnimationsPage'
 
 // Ленивая загрузка компонентов
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'))
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: 'home', Component: HomePage },
       { path: 'main', Component: MainPage },
       { path: 'lightpage', Component: LightInputPage },
+      { path: 'animations', Component: AnimationsPage },
       { path: 'auth', Component: AuthForm },
     ],
   },
