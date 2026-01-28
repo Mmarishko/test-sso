@@ -66,12 +66,8 @@ export function MainPage() {
   // }, [])
 
   return state ? (
-    <div className="table">
-      <div
-        className="container"
-        style={{ backgroundColor: color }}
-        // style={{ backgroundColor: color, margin: margin + 'px' }}
-      >
+    <div className="gridContainer">
+      <div className="container" style={{ backgroundColor: color }}>
         Мой контент тут
       </div>
       <img src="/images/box.jpg" className="image image-left" />
