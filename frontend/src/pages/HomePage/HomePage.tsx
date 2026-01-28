@@ -25,7 +25,7 @@ export default function HomePage() {
     console.log(event?.target)
   }
   const handleKeyPress = (event: KeyboardEvent<HTMLDivElement>) => {
-    alert('KeyDown')
+    if (event?.code === 'Enter' || event?.code === 'Space') alert('KeyDown')
     console.log(event?.target)
   }
 
@@ -34,13 +34,9 @@ export default function HomePage() {
       <header>
         <h2 className="header">Профиль пользователя</h2>
       </header>
-      <body>
+      <div>
         <div id="root">
           <p>Access token: {accessToken?.substring(0, 20)}...</p>
-          <div className="range">
-            <label>Volume</label>
-            <input type="range" id="volume" name="volume" min="0" max="11" />
-          </div>
 
           <section role="tabpanel" tabIndex={1}>
             <p>Травоядные животные с коротким хоботом, которые живут в лесу.</p>
@@ -75,6 +71,7 @@ export default function HomePage() {
           </section>
 
           <section>
+            <div>Кнопка - не кнопка</div>
             <div
               id="myButton"
               className="button"
@@ -87,9 +84,27 @@ export default function HomePage() {
               Нажми
             </div>
           </section>
+
+          <section className="tooltip-section">
+            <div>
+              <h2>Fade in</h2>
+              <div className="tooltip-cnt">
+                <span className="tooltip-target">Наведи на меня</span>
+                <div className="tooltip">Эта подсказка проявилась</div>
+              </div>
+            </div>
+
+            <div className="transitioned">
+              <h2>Slide up</h2>
+              <div className="tooltip-cnt">
+                <span className="tooltip-target">Наведи на меня</span>
+                <div className="tooltip">Это подсказка, которая всплыла</div>
+              </div>
+            </div>
+          </section>
         </div>
         <div id="modal-root"></div>
-      </body>
+      </div>
     </main>
   )
 }

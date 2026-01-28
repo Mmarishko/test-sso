@@ -19,10 +19,87 @@
   border-radius: 10px;
   color: black;
   background-color: #8dd193;
+  transition:
+    background-color 0.6s,
+    transform 0.3s;
 }
 
 .button:hover,
+.button:focus,
 .button:active {
   background-color: #67946a;
   border-color: #67946a;
+  transform: scale(110%);
+  transition:
+    background-color 1s,
+    transform 1.5s;
+
+  /* Значения функций */
+  /* transform: matrix(1, 2, 3, 4, 5, 6); */
+  /* transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); */
+  /* transform: perspective(27px); */
+  /* transform: rotate(0.5turn); */
+  /* transform: rotate3d(1, 2, 3, 10deg); */
+  /* transform: rotateX(10deg); */
+  /* transform: rotateY(10deg); */
+  /* transform: rotateZ(10deg); */
+  /* transform: translate(12px, 50%); */
+  /* transform: translate3d(12px, 50%, 3em); */
+  /* transform: translateX(2em); */
+  /* transform: translateY(3em); */
+  /* transform: translateZ(2px); */
+  /* transform: scale(2, 0.5); */
+  /* transform: scale3d(2.5, 1.2, 0.3); */
+  /* transform: scaleX(2); */
+  /* transform: scaleY(0.5); */
+  /* transform: scaleZ(0.3); */
+  /* transform: skew(30deg, 20deg); */
+  /* transform: skewX(30deg); */
+  /* transform: skewY(1.07rad); */
+
+  /* Мультифункциональные значения */
+  /* transform: translateX(10px) rotate(10deg) translateY(5px); */
+  /* transform: perspective(500px) translate(10px, 0, 20px) rotateY(3deg); */
+
+  /* Глобальные значения */
+  /* transform: inherit;*/ /* Наследует значение transform от родительского элемента. */
+  /* transform: initial;  */ /* Сбрасывает transform к значению по умолчанию (обычно none).*/
+  /* transform: unset; */ /*Сбрасывает свойство: действует как inherit, если свойство наследуемое, или как initial, если нет. Так как transform не наследуется, он работает как initial.  */
+}
+
+.tooltip-section {
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.tooltip-cnt {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  left: 25%;
+  /* Описываем переход */
+  transition:
+    opacity 0.4s,
+    visibility 0.4s,
+    transform 0.4s;
+  /* Прячем элемент */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.transitioned .tooltip {
+  /* Второй тултип ещё опускаем вниз */
+  transform: translateY(20px);
+}
+
+.tooltip-target:hover + .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.transitioned .tooltip-target:hover + .tooltip {
+  /* Поднимаем второй тултип обратно вверх при появлении */
+  transform: translateY(0);
 }
