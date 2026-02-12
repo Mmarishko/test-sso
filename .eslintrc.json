@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "ignorePatterns": ["node_modules/", "dist/", "build/"],
+  "parser": "@typescript-eslint/parser", // Парсер для обработки jsx кода
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": { "semi": ["warn", "always"], "prettier/prettier": "error" },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
