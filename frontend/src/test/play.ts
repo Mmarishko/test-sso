@@ -1,3 +1,4 @@
+export {}
 const obj = {
   name: 'Marina',
   getName() {
