@@ -1,7 +1,7 @@
 export const EventCapture = () => {
-  let parent1 = document.getElementById('parent1')
+  const parent1 = document.getElementById('parent1')
 
-  let child1 = document.getElementById('child1')
+  const child1 = document.getElementById('child1')
 
   parent1?.addEventListener('click', function () {
     console.log('Родитель (всплытие)')

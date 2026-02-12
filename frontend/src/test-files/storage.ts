@@ -1,3 +1,4 @@
+export {}
 // Запись
 localStorage.setItem('key', 'value')
 sessionStorage.setItem('key', 'value')

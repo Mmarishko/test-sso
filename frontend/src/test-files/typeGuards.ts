@@ -1,3 +1,8 @@
+import { Box } from './classes'
+import { IBird } from './type-vs-interface'
+import { IChild } from './utility-types'
+
+export {}
 //  typeof 'string' | 'number' | 'bigint' | 'boolean' | 'symbol' | 'undefined' | 'object' | 'function'
 // const c:
 //   | 'string'

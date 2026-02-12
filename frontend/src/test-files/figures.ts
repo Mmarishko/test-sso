@@ -1,3 +1,4 @@
+export {}
 class MyClass<T> {
   static size1 = 10
   size2 = 10

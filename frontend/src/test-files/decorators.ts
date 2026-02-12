@@ -1,3 +1,5 @@
+export {}
+
 function first() {
   console.log('first(): factory evaluated')
   return function (

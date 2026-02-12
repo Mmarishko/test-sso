@@ -1,6 +1,6 @@
-import { trace } from 'console'
+export {}
 
-let url =
+const url =
   'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits'
 
 function getCommit() {

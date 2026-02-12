@@ -1,7 +1,7 @@
 /**
  * types vs interface
  */
-interface IBird {
+export interface IBird {
   wings: number
 }
 

@@ -1,6 +1,7 @@
 /**
  * enum: как объявлять и использовать
  */
+export {}
 enum MyDays {
   monday = 1,
   tuesday,
@@ -63,7 +64,7 @@ enum One {
 
 enum Two {
   firsh = 'firsh',
-  second = One.two,
+  // second = One.two,
 }
 
 // как выглядит enum после компиляции

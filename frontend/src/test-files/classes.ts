@@ -1,7 +1,7 @@
 /**
  *  Классы в js
  */
-
+export {}
 class JSUser {
   myName
   constructor(myName) {
@@ -216,6 +216,11 @@ userWorker.getLastRole()
 
 /**
  * слияние интерфейса с классом
+ * это механизм объединения деклараций (declaration merging),
+ * при котором TypeScript автоматически объединяет одноимённые
+ * интерфейс и класс в одной области видимости.
+ * Интерфейс дополняет класс, добавляя к нему новые типы или методы,
+ * не меняя при этом реализации.
  */
 
 interface IMyUser {
@@ -307,7 +312,7 @@ class TestStaticFieldAndGeneric<Type> {
 }
 
 // определит тип возвращаемый функцией как this
-class Box {
+export class Box {
   contents: string = ''
   set(value: string) {
     // (method) Box.set(value: string): this

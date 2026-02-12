@@ -1,6 +1,7 @@
 /**
  * Conditional Type  - типы с условием сходно тернарному оператору.
  */
+export {}
 type StringType<T> = T extends string ? string : never
 
 /** infer в TypeScript — это ключевое слово, которое используется внутри

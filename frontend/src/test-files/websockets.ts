@@ -1,4 +1,5 @@
-let mySocket = new WebSocket(
+export {}
+const mySocket = new WebSocket(
   'wss://javascript.info/article/websocket/demo/hello',
   ['soap', 'wamp']
 )

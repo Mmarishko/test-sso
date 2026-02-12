@@ -1,4 +1,5 @@
 // исправить ошибку в типах
+export {}
 type TArray = number | { foo: number }
 
 const arr: Array<number | { foo: number }> = [1, { foo: 2 }, 3, 4, { foo: 2 }]

@@ -1,5 +1,5 @@
 import { VirtualPoint } from './test1'
-
+export {}
 // вызов как метод объекта
 const user1 = {
   name: 'Alice',
@@ -7,7 +7,7 @@ const user1 = {
     console.log('1', this.name) // "Alice"
   },
   greet1: () => {
-    console.log('111', this.name) // undefined,  контекст из внешнего окружения
+    // console.log('111', this.name) // undefined,  контекст из внешнего окружения
   },
 }
 
@@ -18,7 +18,7 @@ console.log('2', user1.greet()) // this → "Alice", но функция нич�
 
 // вызов как обычная функция
 function sayHi() {
-  console.log('3', this) // В браузере → window; в node -> global, в strict mode → undefined (по умолчанию в es6)
+  // console.log('3', this) // В браузере → window; в node -> global, в strict mode → undefined (по умолчанию в es6)
 }
 sayHi()
 
@@ -27,7 +27,7 @@ console.log('4', userGreet()) // this → undefined вызов как обычн
 
 // вызов как новый экземпляр
 function User(name) {
-  this.name = name // this — новый экземпляр объекта
+  // this.name = name // this — новый экземпляр объекта
 }
 const alice = new User('Alice') // this → alice — новый экземпляр объекта
 
@@ -35,7 +35,7 @@ const alice = new User('Alice') // this → alice — новый экземпл�
 const user2 = {
   name: 'Alice',
   greet: () => {
-    console.log('5', this.name) // undefined! this — не user, а внешний контекст
+    // console.log('5', this.name) // undefined! this — не user, а внешний контекст
   },
   greet_() {
     console.log('51', this.name) // Alice! this — user
@@ -70,10 +70,10 @@ setTimeout(user.greet.bind(user), 1000) // 6 Alice
 
 const user3 = {
   name: 'Alice',
-  greet: () => console.log('7', this.name), // но this — не user! Не подходит, если нужно ссылаться на сам объект.
+  // greet: () => console.log('7', this.name), // но this — не user! Не подходит, если нужно ссылаться на сам объект.
 }
 
-user3.greet() // undefined
+// user3.greet() // undefined
 
 // Лучший способ — явно привязать или использовать стрелку вне объекта:
 const greet = () => console.log('8', user.name)

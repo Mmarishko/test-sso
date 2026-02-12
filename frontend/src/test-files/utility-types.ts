@@ -1,3 +1,4 @@
+export {}
 // utility Types
 interface IMan {
   name: string | null
@@ -6,7 +7,7 @@ interface IMan {
   age: number
 }
 
-interface IChild {
+export interface IChild {
   parents: IMan[]
   age: number
 }
@@ -113,9 +114,9 @@ type TreadOnly = Readonly<IMan>
 
 // 18 NoInfer<Type> , блокирует вывод (извлечения) типа из содержимого. В остальном идентичен типу.
 // Гарантирует, что второй аргумент функции является частью первого
-function createInfer<C extends string>(a: C[], b: NoInfer<C>) {
-  // some logic
-}
+// function createInfer<C extends string>(a: C[], b: NoInfer<C>) {
+//   // some logic
+// }
 
-const a = createInfer(['red', 'yellow', 'green'], 'yellow')
+// const a = createInfer(['red', 'yellow', 'green'], 'yellow');
 // const b = createInfer(['red', 'yellow', 'green'], 'blue') // error.  'blue' не содержится в первом аргументе

@@ -1,4 +1,4 @@
-//
+export {}
 // 2. new base types for TS
 function myAny(arg: any): any {
   return 'taratata'
